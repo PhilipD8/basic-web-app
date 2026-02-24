@@ -16,11 +16,11 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    console.log("query: " + query);
-  }
-
-  if (query.toLowerCase().includes("hey")) {
-    return "HOWDY";
+    const words = query.toLowerCase().split(" ");
+    const plusIndex = words.indexOf("plus");
+    const num1 = Number(words[plusIndex - 1]);
+    const num2 = Number(words[plusIndex + 1]);
+    return String(num1 + num2);
   }
 
   return "";
