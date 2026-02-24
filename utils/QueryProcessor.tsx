@@ -19,7 +19,9 @@ export default function QueryProcessor(query: string): string {
     console.log("query: " + query);
   }
 
-
+  if (query.toLowerCase().includes("hey")) {
+    return "HOWDY";
+  }
 
   return "";
 }
