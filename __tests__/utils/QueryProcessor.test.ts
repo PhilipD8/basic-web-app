@@ -29,9 +29,6 @@ describe("QueryProcessor", () => {
     test('should return Andrew ID description', () => {
         const query = "andrew id";
         const response: string = QueryProcessor(query);
-        expect(response).toBe((
-            "Your Andrew ID is a group of letters and numbers that CMU " +
-            "uses as identification for its students and staff."
-        ));
+        expect(response).toBe("philipda");
     })
 });

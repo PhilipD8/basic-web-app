@@ -12,10 +12,7 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("andrew id")) {
-    return (
-      "Your Andrew ID is a group of letters and numbers that CMU " +
-      "uses as identification for its students and staff."
-    );
+    return "philipda";
   }
 
   return "";
