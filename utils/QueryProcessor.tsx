@@ -15,5 +15,11 @@ export default function QueryProcessor(query: string): string {
     return "philipda";
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    console.log("query: " + query);
+  }
+
+
+
   return "";
 }
