@@ -16,12 +16,20 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    const words = query.toLowerCase().split(" ");
-    const plusIndex = words.indexOf("plus");
-    const num1 = Number(words[plusIndex - 1]);
-    const num2 = Number(words[plusIndex + 1]);
-    return String(num1 + num2);
-  }
 
-  return "";
+    const words = query.toLowerCase().trim().split(/\s+/);
+    const plusIndex = words.indexOf("plus");
+
+    if (plusIndex <= 0 || plusIndex >= words.length - 1){
+      return "";
+    }
+
+    const raw1 = words[plusIndex - 1];
+    const raw2 = words[plusIndex + 1];
+
+    const clean1 = Number(raw1.replace(/[^\d.-]/g, ""));
+    const clean2 = Number(raw2.replace(/[^\d.-]/g, ""));  
+
+    return String(clean1 + clean2);
+  }
 }
